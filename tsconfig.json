@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "module": "es6",
+    "target": "es5",
+    "jsx": "preserve",
+    "allowJs": true,
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+  },
+  "types": [
+    "webpack-env"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+}

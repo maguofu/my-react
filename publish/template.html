@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-overflow-scrolling: touch;
+      font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,"\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;;
+    }
+    p{
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+    }
+  </style>
+  <script>
+  !function (global) {
+      var window = global || this,
+        width = 720,
+        docEl = window.document.documentElement,
+        dpr = window.devicePixelRatio || 1,
+        resizeEvt = 'resize',
+        resizeCall = (function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) {
+            docEl.style.fontSize = 100 + 'px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / width) + 'px';
+          }
+          return arguments.callee;
+        })();
+
+        dpr = dpr >= 3 ? 3 : dpr >= 2 ? 2 : 1;
+        docEl.setAttribute('data-dpr', dpr);
+
+      window.addEventListener && window.addEventListener(resizeEvt, resizeCall, false);
+    } (this);
+  </script>
+  <style>
+    #_skeleton {
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right: 0;
+      z-index: 9990;
+      padding : 0;
+      overflow: hidden;
+      transition:z-index 0s .3s, opacity .3s ease-in-out;
+      -moz-transition: z-index 0s .3s, opacity .3s ease-in-out;
+      -webkit-transition: z-index 0s .3s, opacity .3s ease-in-out;
+      -o-transition: z-index 0s .3s, opacity .3s ease-in-out;
+    }
+    #_skeleton.skeleton-hide {
+      opacity: 0;
+      z-index:-9999;
+    }
+  </style>
+  <style>
+    #channel-activity-laoding {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 2000;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      -webkit-border-radius: 0.08rem;
+      border-radius: 0.08rem;
+      font-size: 0.14rem;
+      line-height: 0.2rem;
+      text-align: center;
+      color: #fff;
+      padding: 0.08rem 0.12rem;
+      min-width: 0.88rem;
+      max-width: 70%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-border-radius: 0.16rem;
+      border-radius: 0.16rem;
+      font-size: 0.28rem;
+      line-height: 0.4rem;
+      padding: 0.16rem 0.24rem;
+      min-width: 1.76rem;
+    }
+    #channel-activity-laoding.loading-hide {
+      opacity: 0;
+      z-index:-9999;
+    }
+    #channel-activity-laoding .channel-loading-icon {
+      display: inline-block;
+      line-height: 1;
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+      -webkit-animation: loadingCircle 1s infinite linear;
+      animation: loadingCircle 1s infinite linear;
+    }
+    @-webkit-keyframes loadingCircle {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes loadingCircle {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+</html>
