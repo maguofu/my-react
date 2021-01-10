@@ -10,7 +10,7 @@ function entries() {
   };
   // 读取/src/pages/*/*.{js,ts}  即入口文件路径
   const PAGE_PATH = path.resolve(__dirname, './src/pages');
-  const entryFiles = glob.sync(PAGE_PATH + '/*/*.{js,ts}', {
+  const entryFiles = glob.sync(PAGE_PATH + '/*/*.{js,ts,tsx,jsx}', {
     ignore: PAGE_PATH + '/*/*.d.ts'
   })
   
@@ -66,7 +66,7 @@ module.exports = {
       '@src': path.resolve(__dirname, 'src/'),
       '@utils': path.resolve(__dirname, 'utils/'),
     },
-    extensions: ['.jsx', '.tsx', '.ts', '.js']
+    extensions: ['.jsx', '.tsx', '.ts', '.js', '.less', '.css', '.sass']
   },
   optimization: {
     splitChunks: {
@@ -116,10 +116,10 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           'style-loader',
-          miniCssExtractPlugin.loader,
+          // miniCssExtractPlugin.loader,
+          // 'sass-loader',
           'css-loader',
           'less-loader',
-          'sass-loader',
         ]
       },
       {
