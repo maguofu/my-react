@@ -35,6 +35,9 @@ export default class Child extends React.Component <any, any> { // prop 和state
         {
           this.state.city ? <p>city is {this.state.city}</p> : ''
         }
+        <div className="zuhe">
+          {this.props.children}
+        </div>
       </div>
     );
   }

@@ -27,12 +27,14 @@ export default class App extends React.Component <any, any> { // prop 和state�
   }
 
   render() {
-    console.log(2)
+    console.log(2,this)
     return (
       <div>
         <h3 className={'hhh'}>Hello, world!</h3>
         <p>It is {this.state.date.toLocaleTimeString()}.</p>
-        <Child ref = {this.state.child1} flag={false} text={'😄数据1😂'}/>
+        <Child ref = {this.state.child1} flag={false} text={'😄数据1😂'}>
+          <p>999</p>
+        </Child>
         <Child emitDataFather={this.emitData.bind(this)} flag={true} text={'😄数据2😂'}/>
       </div>
     );
