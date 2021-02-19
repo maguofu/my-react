@@ -20,7 +20,11 @@ const proxy = {
     // RewriteRule ^webpack-learn/test/study/mock/mytest3$                  /webpack-learn/test/study/mock/mytest3.json
     target: 'http://localhost:70/webpack-learn/test',
     changeOrigin: true, // 改变源
-  }
+  },
+  '/omsdata/*': {
+    target: 'http://yapi.sftcwl.com/mock/925',
+    changeOrigin: true,
+  },
 };
 
 module.exports = merge(common, {

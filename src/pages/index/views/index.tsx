@@ -1,6 +1,14 @@
+/*
+ * @Author: your name
+ * @Date: 2021-02-09 15:30:16
+ * @LastEditTime: 2021-02-09 15:48:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /workspace/my-react/src/pages/index/views/index.tsx
+ */
 import React, {createRef} from 'react';
-import './style/index';
-import Child from './views/child';
+import '../style/index';
+import Child from './child';
 
 
 export default class App extends React.Component <any, any> { // prop 和state的类型都为any
