@@ -32,7 +32,6 @@ const slice = createSlice({
     // fetch为一个异步请求
     builder.addCase(testApi.fulfilled, (state, action) => {
       const data = action.payload && action.payload.data; // data为接口返回的data字段
-      console.log(data);
     })
   },
 });
