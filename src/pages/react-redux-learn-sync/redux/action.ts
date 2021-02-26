@@ -1,5 +1,5 @@
 
-import { UPDATE_ITEM, UPDATE_FLAG, FETCH_DATA } from '../interface/constants';
+import { UPDATE_ITEM, UPDATE_FLAG } from '../interface/constants';
 import api from '../services/index';
 
 export function updateItem(index: number) {
@@ -12,11 +12,5 @@ export function updateItem(index: number) {
 export function updateFlag() {
   return {
     type: UPDATE_FLAG,
-  }
-}
-
-export function fetchData() {
-  return {
-    type: FETCH_DATA,
   }
 }

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateItem, updateFlag, fetchData } from '../redux/action';
+import { actions, testApi } from '../redux/slice';
 import { IListItem, pageState } from '../interface/types';
 const { useEffect } = React;
 require('../style/index');
@@ -13,14 +13,16 @@ function IndexPage(props) {
   );
 
   const getData = () => {
-    dispatch(fetchData());
+    dispatch(testApi());
   }
   const itemClickhandle = (item: IListItem, index: number) => {
-    dispatch(updateItem(index));
-    dispatch(updateFlag());
+    dispatch(actions.updateItem(index));
+    dispatch(actions.updateFlag());
   }
 
-  // getData();
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className='test-page-container'>
       {dataList.map((item, index) => (

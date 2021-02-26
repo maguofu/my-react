@@ -1,5 +1,5 @@
 import { initialState } from './state';
-import { UPDATE_ITEM, UPDATE_FLAG, FETCH_DATA } from '../interface/constants';
+import { UPDATE_ITEM, UPDATE_FLAG } from '../interface/constants';
 import { IListItem } from '../interface/types';
 
 
@@ -22,11 +22,6 @@ export function reactReduxLearnReducer(state=initialState, action) {
       return {
         ...state,
         flag: !state.flag,
-      }
-    case FETCH_DATA:
-      return {
-        ...state,
-        fetchData: {errno: 0}
       }
     default:
       return state;

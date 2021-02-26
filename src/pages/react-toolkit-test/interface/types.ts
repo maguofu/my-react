@@ -9,5 +9,4 @@ export interface IListItem {
 export interface pageState {
   dataList: IListItem[];
   flag: boolean;
-  fetchData: any;
 }

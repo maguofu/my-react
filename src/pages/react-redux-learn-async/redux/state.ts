@@ -5,6 +5,7 @@ export const initialState: pageState = {
     name: 'wasdfga',
     sex: 'man',
   }],
-  flag: false,
+  flag: true,
+  loading: true,
   fetchData: {},
 }

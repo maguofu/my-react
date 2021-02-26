@@ -1,26 +1,30 @@
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actions, testApi } from '../redux/slice';
+import { updateItem, updateFlag } from '../redux/action';
 import { IListItem, pageState } from '../interface/types';
+import api from '../services/index';
 const { useEffect } = React;
 require('../style/index');
 
 function IndexPage(props) {
   const dispatch = useDispatch();
-  const { dataList, flag } = useSelector(
+  const { dataList, flag, loading } = useSelector(
     (state: pageState) => state,
   );
 
-  const getData = () => {
-    dispatch(testApi());
+  const getData = async () => {
+    const result = await api.testApi();
+    console.log(result);
   }
   const itemClickhandle = (item: IListItem, index: number) => {
-    dispatch(actions.updateItem(index));
-    dispatch(actions.updateFlag());
+    dispatch(updateItem(index));
+    dispatch(updateFlag());
   }
 
-  getData();
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className='test-page-container'>
       {dataList.map((item, index) => (
